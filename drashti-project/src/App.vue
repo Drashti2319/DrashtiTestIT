@@ -8,6 +8,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <h1>Drashti - Innovalabs Technologies Test</h1>
 
       <nav>
+        <RouterLink to="/DataCommunication">Data Communication</RouterLink>
         <RouterLink to="/Users">User List (using store)</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>

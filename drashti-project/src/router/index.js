@@ -18,6 +18,32 @@ const router = createRouter({
       path: '/about',
       name: 'about',
       component: () => import('../pages/AboutView.vue')
+    },
+    {
+      path: '/DataCommunication',
+      name: 'dataCommunication',
+      children: [
+        {
+          path: '',
+          name: 'dataCommunicationIndex',
+          component: () => import('../pages/DataCommunication/index.vue')
+        },
+        {
+          path: '/ParentChild',
+          name: 'parentChild',
+          component: () => import('../pages/DataCommunication/ParentChild/index.vue')
+        },
+        {
+          path: '/ChildParent',
+          name: 'childParent',
+          component: () => import('../pages/DataCommunication/ChildParent/index.vue')
+        },
+        {
+          path: '/ChildChild',
+          name: 'childChild',
+          component: () => import('../pages/DataCommunication/ChildChild/index.vue')
+        }
+      ]
     }
   ]
 })
