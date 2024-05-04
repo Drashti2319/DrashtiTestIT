@@ -44,6 +44,11 @@ const router = createRouter({
           component: () => import('../pages/DataCommunication/ChildChild/index.vue')
         }
       ]
+    },
+    {
+      path: '/DynamicHandlingForm',
+      name: 'dynamicHandlingForm',
+      component: () => import('../pages/DynamicHandlingForm/index.vue')
     }
   ]
 })

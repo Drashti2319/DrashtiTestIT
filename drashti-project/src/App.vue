@@ -5,12 +5,14 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <div class="wrapper">
-      <h1>Drashti - Innovalabs Technologies Test</h1>
+      <h2 style="font-weight: 500">Drashti - Innovalabs Technologies Test</h2>
 
       <nav>
-        <RouterLink to="/DataCommunication">Data Communication</RouterLink>
-        <RouterLink to="/Users">User List (using store)</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <ul>
+          <li><RouterLink to="/DataCommunication">Data Communication</RouterLink></li>
+          <li><RouterLink to="/Users">User List (using store)</RouterLink></li>
+          <li><RouterLink to="/DynamicHandlingForm">Dynamic Handing Form</RouterLink></li>
+        </ul>
       </nav>
     </div>
   </header>
