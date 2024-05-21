@@ -32,6 +32,12 @@ export default {
     resetForm() {
       this.formData = {}
     },
+    setRequired(token, value) {
+      const block = this.blocks.find((block) => block.token === token)
+      if (block && block.props) {
+        block.props.required = value
+      }
+    },
     submitForm() {
       if (this.validateForm()) {
         alert('Form submitted successfully!')
@@ -42,17 +48,22 @@ export default {
       let isValid = true
       this.blocks.forEach((block) => {
         if (block.props.required) {
+          if (typeof block.props.required === 'string') {
+            const requiredToken = block.props.required
+            const requiredBlock = this.blocks.find((block) => block.token === requiredToken)
+            if (requiredBlock) {
+              requiredBlock.props.required = block.props.required
+            }
+          } else if (typeof block.props.required === 'boolean') {
+            if (block.token === 'PERSON_DOB') {
+              this.setRequired(block.token, this.formData.IS_PERSON_MINOR)
+            }
+          }
+
           if (!this.formData[block.token]) {
             isValid = false
             alert(`${block.props.title} is required.`)
             return
-          }
-          if (block.token === 'PERSON_DOB' && this.formData['IS_PERSON_MINOR']) {
-            if (!this.formData[block.token]) {
-              isValid = false
-              alert('DOB is required for minors.')
-              return
-            }
           }
         }
       })

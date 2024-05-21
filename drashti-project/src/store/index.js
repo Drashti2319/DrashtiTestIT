@@ -39,7 +39,7 @@ const store = createStore({
       const query = state.searchQuery.toLowerCase()
       const filteredUsers = state.users.filter(
         (user) =>
-          user.name.toLowerCase().includes(query) || user.email.toLowerCase().includes(query)
+          user.name.toLowerCase().includes(query) || user.email.toLowerCase().includes(query) || user.phone.includes(query)
       )
       commit('setFilteredUsers', filteredUsers)
     }

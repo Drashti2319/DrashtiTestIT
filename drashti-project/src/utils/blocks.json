@@ -21,7 +21,7 @@
     "type": "date",
     "props": {
       "title": "Enter your DOB",
-      "required": false,
+      "required": "IS_PERSON_MINOR",
       "placeholder": "e.g. 01/01/2000"
     }
   }
